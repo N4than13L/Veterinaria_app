@@ -15,6 +15,7 @@ class Treatment extends Model
         'id',
         'obserbations',
         'amount',
+        'users_id',
         'animals_id',
         'created_at',
         'updated_at'

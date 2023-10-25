@@ -18,7 +18,7 @@ class Bill extends Model
 
     protected $fillable = [
         'id', 'attended_by',  'created_at',
-        'updated_at', 'client_id', 'animals_id', 'treatment_id', 'vaccine_id'
+        'updated_at', 'client_id', 'animals_id', 'treatment_id', 'vaccine_id', 'users_id',
     ];
 
     // relacion de muchos a uno.

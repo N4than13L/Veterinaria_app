@@ -15,6 +15,7 @@ class Specie extends Model
         'id',
         'name',
         'type',
+        'users_id',
         'created_at',
         'updated_at'
     ];

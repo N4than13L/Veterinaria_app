@@ -14,6 +14,7 @@ class Animal extends Model
         'name',
         'age',
         'species_id',
+        'users_id',
         'created_at',
         'updated_at'
     ];

@@ -10,8 +10,12 @@
 
     <link rel="dns-prefetch" href="//fonts.bunny.net">
 
+    {{-- fonts awasome --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title> Veterinaria los codornises </title>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
@@ -30,10 +34,10 @@
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md shadow-sm" style="background-color: #89b5c9;">
+        <nav class="navbar navbar-expand-md shadow-sm" style="background-color: #6eafa0;">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                    <h4> Veterinaria los codornises </h4>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -43,9 +47,17 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav me-auto">
+                    @if (Auth::user())
+                        <ul class="navbar-nav ">
+                            <a class="fw-normal btn m-2" href="{{ url('/home') }}">Inicio</a>
+                            <a class="fw-normal btn m-2" href="#">Clientes</a>
+                            <a class="fw-normal btn m-2" href="#">Vacunas</a>
+                            <a class="fw-normal btn m-2" href="#">Mascotas</a>
+                            <a class="fw-normal btn m-2" href="#">Especies</a>
+                            <a class="fw-normal btn m-2" href="#">Tratamientos</a>
 
-                    </ul>
+                        </ul>
+                    @endif
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
@@ -69,10 +81,17 @@
                                     {{ Auth::user()->name . ' ' . Auth::user()->surname }}
                                 </a>
 
+
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    {{-- settings --}}
+                                    <a class="dropdown-item" href="{{ route('settings') }}">
+                                        <i class="fa-solid fa-gear"></i> Configuración de perfil
+                                    </a>
+                                    {{-- logout --}}
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                                                     document.getElementById('logout-form').submit();"><i
+                                            class="fa-solid fa-right-from-bracket"></i>
                                         {{ __('Logout') }}
                                     </a>
 

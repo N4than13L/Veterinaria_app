@@ -3,7 +3,7 @@
         'name' => 'laravel/laravel',
         'pretty_version' => 'dev-veterinaria',
         'version' => 'dev-veterinaria',
-        'reference' => '8087e1a9a5d36002d29ca4f64eed63a75d3f690b',
+        'reference' => '9ca29993dad7428d0ce66f80cf7d727fde3ca3b2',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -373,7 +373,7 @@
         'laravel/laravel' => array(
             'pretty_version' => 'dev-veterinaria',
             'version' => 'dev-veterinaria',
-            'reference' => '8087e1a9a5d36002d29ca4f64eed63a75d3f690b',
+            'reference' => '9ca29993dad7428d0ce66f80cf7d727fde3ca3b2',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

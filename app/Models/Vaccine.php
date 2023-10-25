@@ -15,6 +15,7 @@ class Vaccine extends Model
         'name',
         'type',
         'effects',
+        'users_id',
         'created_at',
         'updated_at'
     ];
