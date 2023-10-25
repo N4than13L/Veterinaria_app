@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\User;
+use App\Models\Animal;
 
 class Client extends Model
 {
@@ -27,5 +28,11 @@ class Client extends Model
     public function users()
     {
         return $this->belongsTo(User::class, 'users_id');
+    }
+
+    // relacion de muchos a uno.
+    public function animals()
+    {
+        return $this->belongsTo(Animals::class, 'animals_id');
     }
 }
