@@ -51,7 +51,7 @@
                         <ul class="navbar-nav ">
                             <a class="fw-normal btn m-2" href="{{ url('/home') }}">Inicio</a>
                             <a class="fw-normal btn m-2" href="#">Clientes</a>
-                            <a class="fw-normal btn m-2" href="#">Vacunas</a>
+                            <a class="fw-normal btn m-2" href="{{ route('vaccine.index') }}">Vacunas</a>
                             <a class="fw-normal btn m-2" href="#">Mascotas</a>
                             <a class="fw-normal btn m-2" href="#">Especies</a>
                             <a class="fw-normal btn m-2" href="#">Tratamientos</a>
