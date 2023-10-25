@@ -9,6 +9,16 @@ use Illuminate\Support\Facades\DB;
 
 class VaccineController extends Controller
 {
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         $vaccine = Vaccine::orderBy('id', 'desc')->paginate(5);

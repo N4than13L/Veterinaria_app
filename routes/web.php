@@ -4,6 +4,7 @@ use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\SpeciesController;
 use App\Http\Controllers\VaccineController;
 
 /*
@@ -38,3 +39,12 @@ Route::get('/vaccines/delete/{id}', [VaccineController::class, 'delete'])->name(
 Route::get('/vaccines/edit/{id}', [VaccineController::class, 'edit'])->name('vaccine.edit');
 
 Route::post('/vaccines/update/{id}', [VaccineController::class, 'update'])->name('vaccine.update');
+
+
+// species.
+Route::get('/species', [SpeciesController::class, 'index'])->name('species.index');
+Route::get('/species/add', [SpeciesController::class, 'add'])->name('species.add');
+Route::post('/species/save', [SpeciesController::class, 'save'])->name('species.save');
+Route::get('/species/delete/{id}', [SpeciesController::class, 'delete'])->name('species.delete');
+Route::get('/species/edit/{id}', [SpeciesController::class, 'edit'])->name('species.edit');
+Route::post('/species/edit/{id}', [SpeciesController::class, 'update'])->name('species.update');
