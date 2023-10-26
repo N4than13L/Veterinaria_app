@@ -6,7 +6,7 @@
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">
-                        <h2>Edita Las Especies</h2>
+                        <h2 class="text-center">Edita Las Especies</h2>
                     </div>
 
                     @if (session('message'))

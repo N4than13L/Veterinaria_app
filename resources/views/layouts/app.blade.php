@@ -38,7 +38,7 @@
         <nav class="navbar navbar-expand-md shadow-sm" style="background-color: #6eafa0;">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    <h4> Veterinaria los codornises </h4>
+                    <h4> Veterinaria Los Codornises </h4>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -50,13 +50,20 @@
                     <!-- Left Side Of Navbar -->
                     @if (Auth::user())
                         <ul class="navbar-nav ">
-                            <a class="fw-normal btn m-2" href="{{ url('/home') }}">Inicio</a>
-                            <a class="fw-normal btn m-2" href="#">Clientes</a>
-                            <a class="fw-normal btn m-2" href="{{ route('vaccine.index') }}">Vacunas</a>
-                            <a class="fw-normal btn m-2" href="{{ route('animals.index') }}">Mascotas</a>
-                            <a class="fw-normal btn m-2" href="{{ route('species.index') }}">Especies</a>
-                            <a class="fw-normal btn m-2" href="#">Tratamientos</a>
-
+                            <a class="fw-normal btn" href="{{ url('/home') }}"><i class="fa-solid fa-house"></i>
+                                Inicio</a>
+                            <a class="fw-normal btn" href="{{ route('client.index') }}"> <i
+                                    class="fa-solid fa-user"></i> Clientes</a>
+                            <a class="fw-normal btn" href="{{ route('vaccine.index') }}"> <i
+                                    class="fa-solid fa-syringe"></i> Vacunas</a>
+                            <a class="fw-normal btn" href="{{ route('animals.index') }}"> <i
+                                    class="fa-solid fa-paw"></i>Mascotas</a>
+                            <a class="fw-normal btn" href="{{ route('species.index') }}"><i class="fa-solid fa-dog"></i>
+                                Especies</a>
+                            <a class="fw-normal btn" href="{{ route('treatment.index') }}"><i
+                                    class="fa-solid fa-notes-medical"></i> Tratamientos</a>
+                            <a class="fw-normal btn" href="#"><i class="fa-solid fa-file-invoice-dollar"></i>
+                                Factura</a>
                         </ul>
                     @endif
 

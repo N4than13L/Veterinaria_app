@@ -49,6 +49,8 @@ class SpeciesController extends Controller
         // var_dump($specie);
         // die();
 
+        $specie->save();
+
         return redirect()->route('species.index')->with(['message' => 'Especie agregada con exito']);
     }
 

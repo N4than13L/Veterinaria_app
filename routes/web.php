@@ -7,7 +7,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SpeciesController;
 use App\Http\Controllers\VaccineController;
 use App\Http\Controllers\AnimalsController;
-
+use App\Http\Controllers\TreatmentController;
+use App\Http\Controllers\ClientController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -56,3 +57,22 @@ Route::post('/animals/save', [AnimalsController::class, 'save'])->name('animals.
 Route::get('/animals/edit/{id}', [AnimalsController::class, 'edit'])->name('animals.edit');
 Route::post('/animals/update/{id}', [AnimalsController::class, 'update'])->name('animals.update');
 Route::get('/animals/delete/{id}', [AnimalsController::class, 'delete'])->name('animals.delete');
+
+// tratamiento.
+Route::get('/treatment/index', [TreatmentController::class, 'index'])->name('treatment.index');
+Route::get('/treatment/add', [TreatmentController::class, 'add'])->name('treatment.add');
+Route::post('/treatment/save', [TreatmentController::class, 'save'])->name('treatment.save');
+Route::get('/treatment/edit/{id}', [TreatmentController::class, 'edit'])->name('treatment.edit');
+Route::post('/treatment/update/{id}', [TreatmentController::class, 'update'])->name('treatment.update');
+Route::get('/treatment/delete/{id}', [TreatmentController::class, 'delete'])->name('treatment.delete');
+
+// clientes.
+Route::get('/client/index', [ClientController::class, 'index'])->name('client.index');
+Route::get('/client/add', [ClientController::class, 'add'])->name('client.add');
+Route::post('/client/save', [ClientController::class, 'save'])->name('client.save');
+
+Route::get('/client/edit/{id}', [ClientController::class, 'edit'])->name('client.edit');
+
+Route::post('/client/update/{id}', [ClientController::class, 'update'])->name('client.update');
+
+Route::get('/client/delete/{id}', [ClientController::class, 'delete'])->name('client.delete');

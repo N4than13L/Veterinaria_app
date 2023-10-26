@@ -6,8 +6,8 @@
             <div class="col-md-8">
                 <div class="card p-4">
                     <div class="card-header">
-                        <h3 class="text-center">{{ __('Listado de Animales') }}</h3>
-                        <a class="btn btn-success" href="{{ route('animals.add') }}"><i class="fas fa-plus"></i></a>
+                        <h3 class="text-center">{{ __('Listado de tratamientos') }}</h3>
+                        <a class="btn btn-success" href="{{ route('treatment.add') }}"><i class="fas fa-plus"></i></a>
                     </div>
 
                     @if (session('message'))
@@ -22,33 +22,34 @@
                             <tr>
                                 <th scope="col">Id</th>
                                 <th scope="col">Nombre</th>
-                                <th scope="col">edad</th>
-                                <th scope="col">cumpleaños</th>
-                                <th scope="col">especie</th>
-                                <th scope="col">Raza</th>
-                                <th scope="col">Fecha de creación</th>
+                                <th scope="col">Observaciones</th>
+                                <th scope="col">Monto</th>
+
+                                <th scope="col">Mascota</th>
+                                <th scope="col">Vacuna</th>
+                                <th scope="col">Fecha</th>
                                 <th scope="col">Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($animal as $animals)
+                            @foreach ($treatment as $treatments)
                                 <tr>
-                                    <td scope="row">{{ $animals->id }}</td>
-                                    <td scope="row">{{ $animals->name }}</td>
-                                    <td scope="row">{{ $animals->age }} anios</td>
-                                    <td scope="row">{{ $animals->birth }} </td>
-                                    <td scope="row">{{ $animals->species->name }} </td>
-                                    <td scope="row">{{ $animals->species->type }} </td>
-                                    <td scope="row">{{ $animals->created_at }}</td>
+                                    <td scope="row">{{ $treatments->id }}</td>
+                                    <td scope="row">{{ $treatments->name }}</td>
+                                    <td scope="row">{{ $treatments->observations }}</td>
+                                    <td scope="row">RD$ {{ $treatments->amount }}</td>
+                                    <td scope="row">{{ $treatments->animals->name }}</td>
+                                    <td scope="row">{{ $treatments->vaccine->name }}</td>
+                                    <td scope="row">{{ $treatments->created_at }}</td>
 
                                     <td scope="row">
-                                        <a href="{{ route('animals.edit', ['id' => $animals->id]) }}"
+                                        <a href="{{ route('treatment.edit', ['id' => $treatments->id]) }}"
                                             class="btn btn-warning btn-sm">
                                             <i class="fas fa-edit"></i>
                                         </a>
-                                        &nbsp;
-                                        <a href="{{ route('animals.delete', ['id' => $animals->id]) }}"
-                                            class="btn btn-danger btn-sm">
+
+                                        <a href="{{ route('treatment.delete', ['id' => $treatments->id]) }}"
+                                            class="btn btn-danger btn-sm ">
                                             <i class="fas fa-trash-alt"></i>
                                         </a>
                                     </td>
@@ -56,9 +57,9 @@
                             @endforeach
                     </table>
 
-                    <div class="clearfix">
-                        {{ $animal->links() }}
-                    </div>
+                    {{-- <div class="clearfix">
+                        {{ $vaccine->links() }}
+                    </div> --}}
                 </div>
             </div>
         </div>

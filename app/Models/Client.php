@@ -20,6 +20,7 @@ class Client extends Model
         'phone',
         'address',
         'users_id',
+        'animals_id',
         'created_at',
         'updated_at'
     ];
@@ -33,6 +34,6 @@ class Client extends Model
     // relacion de muchos a uno.
     public function animals()
     {
-        return $this->belongsTo(Animals::class, 'animals_id');
+        return $this->belongsTo(Animal::class, 'animals_id');
     }
 }

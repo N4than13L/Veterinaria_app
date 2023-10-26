@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <div class="card">
+                <div class="card p-4">
                     <div class="card-header">
                         <h3 class="text-center">{{ __('Listado de especies') }}</h3>
                         <a class="btn btn-success" href="{{ route('species.add') }}"><i class="fas fa-plus"></i></a>

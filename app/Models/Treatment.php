@@ -32,6 +32,6 @@ class Treatment extends Model
     // relacion de muchos a uno.
     public function vaccine()
     {
-        return $this->belongsTo(Animal::class, 'animals_id');
+        return $this->belongsTo(Vaccine::class, 'vaccines_id');
     }
 }
