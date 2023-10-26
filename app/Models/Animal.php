@@ -21,13 +21,13 @@ class Animal extends Model
     ];
 
     // relacion de muchos a uno.
-    public function animals()
+    public function species()
     {
         return $this->belongsTo(Specie::class, 'species_id');
     }
     // relacion de muchos a uno.
     public function user()
     {
-        return $this->belongsTo(User::class, 'animals_id');
+        return $this->belongsTo(User::class, 'user_id');
     }
 }

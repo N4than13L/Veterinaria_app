@@ -6,7 +6,7 @@
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">
-                        <h2>Agrega tus vacunas</h2>
+                        <h2>Agregar mascotas</h2>
                     </div>
 
                     @if (session('message'))
@@ -16,7 +16,7 @@
                     @endif
 
                     <div class="card-body">
-                        <form method="POST" action="{{ route('vaccine.save') }}">
+                        <form method="POST" action="{{ route('animals.save') }}">
                             @csrf
 
                             {{-- name --}}
@@ -37,18 +37,17 @@
                                 </div>
                             </div>
 
-                            {{-- type --}}
+                            {{-- age --}}
                             <div class="row mb-3">
-                                <label for="type"
-                                    class="col-md-4 col-form-label text-md-end">{{ __('Tipo de vacuna') }}</label>
+                                <label for="age"
+                                    class="col-md-4 col-form-label text-md-end">{{ __('Edad') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="type" type="text"
-                                        class="form-control @error('type') is-invalid @enderror" name="type"
-                                        value="{{ old('type') }}" required autocomplete="type" autofocus>
+                                    <input id="age" type="number"
+                                        class="form-control @error('age') is-invalid @enderror" name="age"
+                                        value="{{ old('age') }}" required autocomplete="age" autofocus>
 
-
-                                    @error('type')
+                                    @error('age')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -56,17 +55,17 @@
                                 </div>
                             </div>
 
-                            {{-- effects --}}
+                            {{-- birth --}}
                             <div class="row mb-3">
-                                <label for="effects"
-                                    class="col-md-4 col-form-label text-md-end">{{ __('Efectos') }}</label>
+                                <label for="birth"
+                                    class="col-md-4 col-form-label text-md-end">{{ __('fecha de nacimiento') }}</label>
 
                                 <div class="col-md-6">
+                                    <input id="birth" type="text"
+                                        class="form-control @error('birth') is-invalid @enderror" name="birth"
+                                        value="{{ old('birth') }}" required autocomplete="birth" autofocus>
 
-                                    <textarea id="effects" class="form-control @error('effects') is-invalid @enderror" name="effects"
-                                        value="{{ old('effects') }}" required autocomplete="effects" autofocus style="height: 100px"> </textarea>
-
-                                    @error('effects')
+                                    @error('birth')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -74,12 +73,28 @@
                                 </div>
                             </div>
 
+                            {{-- especie --}}
+                            <div class="row mb-3">
+                                <label for="species"
+                                    class="col-md-4 col-form-label text-md-end">{{ __('Especie de la mascota') }}</label>
+
+                                <div class="col-md-6">
+                                    <select name="species" class="form-select" aria-label="Default select example">
+                                        <option selected>Selecciona la especie</option>
+                                        @foreach ($specie as $species)
+                                            <option value="{{ $species->id }}">
+                                                {{ $species->name }}</option>
+                                        @endforeach
+
+                                    </select>
+                                </div>
+                            </div>
 
                             <div class="row mb-0">
                                 <div class="col-md-6 offset-md-4">
                                     <button type="submit" class="btn btn-success">
                                         <i class="fa-solid fa-floppy-disk"></i>
-                                        Guardar Vacuna
+                                        Guardar Mascota
                                     </button>
                                 </div>
                             </div>

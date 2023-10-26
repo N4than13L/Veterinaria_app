@@ -46,8 +46,8 @@ class SpeciesController extends Controller
         $specie->type = $type;
         $specie->users_id = $id;
 
-        var_dump($specie);
-        die();
+        // var_dump($specie);
+        // die();
 
         return redirect()->route('species.index')->with(['message' => 'Especie agregada con exito']);
     }
