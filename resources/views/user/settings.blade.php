@@ -4,9 +4,9 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <div class="card">
+                <div class="card p-4">
                     <div class="card-header">
-                        <h2>Actualiza tus datos</h2>
+                        <h2 class="text-center">Actualiza tus datos</h2>
                     </div>
 
                     @if (session('message'))
@@ -77,7 +77,7 @@
                             <div class="row mb-0">
                                 <div class="col-md-6 offset-md-4">
                                     <button type="submit" class="btn btn-primary">
-                                        {{ __('Register') }}
+                                        {{ __('ACutalizar') }}
                                     </button>
                                 </div>
                             </div>

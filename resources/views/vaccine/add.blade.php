@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <div class="card">
+                <div class="card p-4">
                     <div class="card-header">
                         <h2 class="text-center">Agrega tus vacunas</h2>
                     </div>

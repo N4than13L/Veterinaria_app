@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <div class="card">
+                <div class="card p-4">
                     <div class="card-header">
                         <h2 class="text-center">Edita tus vacunas</h2>
                     </div>
@@ -76,8 +76,8 @@
 
                             <div class="row mb-0">
                                 <div class="col-md-6 offset-md-4">
-                                    <button type="submit" class="btn btn-success">
-                                        <i class="fa-solid fa-floppy-disk"></i>
+                                    <button type="submit" class="btn btn-warning">
+                                        <i class="fa-solid fa-file-pen"></i>
                                         Editar Vacuna
                                     </button>
                                 </div>
