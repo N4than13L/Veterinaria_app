@@ -162,6 +162,8 @@ class BillController extends Controller
         $html = "<h2>Veterinaria los codornices</h2>";
 
         $html .= `<h4 class='text-center'>Atendido por: </h4>` .
+
+            "<h3>Atendido por: </h3>" .
             $bill->attendedby .
             '<h3>Cliente:</h3> ' .
 

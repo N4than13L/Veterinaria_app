@@ -26,7 +26,8 @@
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet" />
-
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js', 'resources/css/app.css', 'resources/js/arriba.js'])
 
@@ -125,6 +126,13 @@
         <main class="py-4">
             @yield('content')
         </main>
+    </div>
+    <div class="position-relative">
+        <div class="position-absolute bottom-0 end-0 m-3">
+            <button type="button" id="up" class="btn btn-success p-3">
+                <i class="fa-solid fa-chevron-up"></i>
+            </button>
+        </div>
     </div>
 
     <footer class="mb-0 mt-3" style="bottom: 0px;">
