@@ -38,9 +38,10 @@ class AnimalsController extends Controller
     {
         $specie = Specie::all();
         $user = Auth::user();
+
         return view('animals.add', [
             'specie' => $specie,
-            'user' => $user
+            'user' => $user,
         ]);
     }
 

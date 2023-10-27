@@ -29,24 +29,26 @@
                         </thead>
                         <tbody>
                             @foreach ($specie as $species)
-                                <tr>
-                                    <td scope="row">{{ $species->id }}</td>
-                                    <td scope="row">{{ $species->name }}</td>
-                                    <td scope="row">{{ $species->type }}</td>
-                                    <td scope="row">{{ $species->created_at }}</td>
+                                @if (Auth::user()->id == $species->users_id)
+                                    <tr>
+                                        <td scope="row">{{ $species->id }}</td>
+                                        <td scope="row">{{ $species->name }}</td>
+                                        <td scope="row">{{ $species->type }}</td>
+                                        <td scope="row">{{ $species->created_at }}</td>
 
-                                    <td scope="row">
-                                        <a href="{{ route('species.edit', ['id' => $species->id]) }}"
-                                            class="btn btn-warning btn-sm">
-                                            <i class="fas fa-edit"></i>
-                                        </a>
-                                        &nbsp;
-                                        <a href="{{ route('species.delete', ['id' => $species->id]) }}"
-                                            class="btn btn-danger btn-sm ">
-                                            <i class="fas fa-trash-alt"></i>
-                                        </a>
-                                    </td>
-                                </tr>
+                                        <td scope="row">
+                                            <a href="{{ route('species.edit', ['id' => $species->id]) }}"
+                                                class="btn btn-warning btn-sm">
+                                                <i class="fas fa-edit"></i>
+                                            </a>
+                                            &nbsp;
+                                            <a href="{{ route('species.delete', ['id' => $species->id]) }}"
+                                                class="btn btn-danger btn-sm ">
+                                                <i class="fas fa-trash-alt"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                @endif
                             @endforeach
                     </table>
 

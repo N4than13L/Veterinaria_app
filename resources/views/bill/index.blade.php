@@ -30,33 +30,37 @@
                             </tr>
                         </thead>
                         <tbody>
+
                             @foreach ($bill as $bills)
-                                <tr>
-                                    <td scope="row">{{ $bills->id }}</td>
-                                    <td scope="row">{{ $bills->attendedby }}</td>
-                                    <td scope="row">{{ $bills->client->name }}</td>
-                                    <td scope="row">{{ $bills->treatment->name }}</td>
-                                    <td scope="row">RD$ {{ $bills->treatment->amount }}</td>
-                                    <td scope="row">{{ $bills->created_at }}</td>
+                                @if (Auth::user()->id == $bills->users_id)
+                                    <tr>
+                                        <td scope="row">{{ $bills->id }}</td>
+                                        <td scope="row">{{ $bills->attendedby }}</td>
+                                        <td scope="row">{{ $bills->client->name }}</td>
+                                        <td scope="row">{{ $bills->treatment->name }}</td>
+                                        <td scope="row">RD$ {{ $bills->treatment->amount }}</td>
+                                        <td scope="row">{{ $bills->created_at }}</td>
 
-                                    <td scope="row">
-                                        <a href="{{ route('bill.viewpdf', ['id' => $bills->id]) }}"
-                                            class="btn btn-primary btn-sm m-2">
-                                            <i class="fa-solid fa-print"></i>
-                                        </a>
+                                        <td scope="row">
+                                            <a href="{{ route('bill.viewpdf', ['id' => $bills->id]) }}"
+                                                class="btn btn-primary btn-sm m-2">
+                                                <i class="fa-solid fa-print"></i>
+                                            </a>
 
-                                        <a href="{{ route('bill.edit', ['id' => $bills->id]) }}"
-                                            class="btn btn-warning btn-sm m-2">
-                                            <i class="fas fa-edit"></i>
-                                        </a>
+                                            <a href="{{ route('bill.edit', ['id' => $bills->id]) }}"
+                                                class="btn btn-warning btn-sm m-2">
+                                                <i class="fas fa-edit"></i>
+                                            </a>
 
-                                        <a href="{{ route('bill.delete', ['id' => $bills->id]) }}"
-                                            class="btn btn-danger btn-sm m-2">
-                                            <i class="fas fa-trash-alt"></i>
-                                        </a>
-                                    </td>
-                                </tr>
+                                            <a href="{{ route('bill.delete', ['id' => $bills->id]) }}"
+                                                class="btn btn-danger btn-sm m-2">
+                                                <i class="fas fa-trash-alt"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                @endif
                             @endforeach
+
                     </table>
 
 

@@ -32,26 +32,28 @@
                         </thead>
                         <tbody>
                             @foreach ($client as $clients)
-                                <tr>
-                                    <td scope="row">{{ $clients->id }}</td>
-                                    <td scope="row">{{ $clients->name }}</td>
-                                    <td scope="row">{{ $clients->surname }}</td>
-                                    <td scope="row">{{ $clients->phone }}</td>
-                                    <td scope="row">{{ $clients->address }}</td>
-                                    <td scope="row">{{ $clients->animals->name }}</td>
-                                    <td scope="row">{{ $clients->created_at }}</td>
-                                    <td scope="row">
-                                        <a href="{{ route('client.edit', ['id' => $clients->id]) }}"
-                                            class="btn btn-warning btn-sm">
-                                            <i class="fas fa-edit"></i>
-                                        </a>
-                                        &nbsp;
-                                        <a href="{{ route('client.delete', ['id' => $clients->id]) }}"
-                                            class="btn btn-danger btn-sm ">
-                                            <i class="fas fa-trash-alt"></i>
-                                        </a>
-                                    </td>
-                                </tr>
+                                @if (Auth::user()->id == $clients->users_id)
+                                    <tr>
+                                        <td scope="row">{{ $clients->id }}</td>
+                                        <td scope="row">{{ $clients->name }}</td>
+                                        <td scope="row">{{ $clients->surname }}</td>
+                                        <td scope="row">{{ $clients->phone }}</td>
+                                        <td scope="row">{{ $clients->address }}</td>
+                                        <td scope="row">{{ $clients->animals->name }}</td>
+                                        <td scope="row">{{ $clients->created_at }}</td>
+                                        <td scope="row">
+                                            <a href="{{ route('client.edit', ['id' => $clients->id]) }}"
+                                                class="btn btn-warning btn-sm">
+                                                <i class="fas fa-edit"></i>
+                                            </a>
+                                            &nbsp;
+                                            <a href="{{ route('client.delete', ['id' => $clients->id]) }}"
+                                                class="btn btn-danger btn-sm ">
+                                                <i class="fas fa-trash-alt"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                @endif
                             @endforeach
                     </table>
 

@@ -17,6 +17,7 @@
                         </div>
                     @endif
 
+
                     <table class="table">
                         <thead>
                             <tr>
@@ -31,30 +32,34 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($animal as $animals)
-                                <tr>
-                                    <td scope="row">{{ $animals->id }}</td>
-                                    <td scope="row">{{ $animals->name }}</td>
-                                    <td scope="row">{{ $animals->age }} anios</td>
-                                    <td scope="row">{{ $animals->birth }} </td>
-                                    <td scope="row">{{ $animals->species->name }} </td>
-                                    <td scope="row">{{ $animals->species->type }} </td>
-                                    <td scope="row">{{ $animals->created_at }}</td>
 
-                                    <td scope="row">
-                                        <a href="{{ route('animals.edit', ['id' => $animals->id]) }}"
-                                            class="btn btn-warning btn-sm">
-                                            <i class="fas fa-edit"></i>
-                                        </a>
-                                        &nbsp;
-                                        <a href="{{ route('animals.delete', ['id' => $animals->id]) }}"
-                                            class="btn btn-danger btn-sm">
-                                            <i class="fas fa-trash-alt"></i>
-                                        </a>
-                                    </td>
-                                </tr>
+                            @foreach ($animal as $animals)
+                                @if ($user->id == $animals->users_id)
+                                    <tr>
+                                        <td scope="row">{{ $animals->id }}</td>
+                                        <td scope="row">{{ $animals->name }}</td>
+                                        <td scope="row">{{ $animals->age }} anios</td>
+                                        <td scope="row">{{ $animals->birth }} </td>
+                                        <td scope="row">{{ $animals->species->name }} </td>
+                                        <td scope="row">{{ $animals->species->type }} </td>
+                                        <td scope="row">{{ $animals->created_at }}</td>
+
+                                        <td scope="row">
+                                            <a href="{{ route('animals.edit', ['id' => $animals->id]) }}"
+                                                class="btn btn-warning btn-sm">
+                                                <i class="fas fa-edit"></i>
+                                            </a>
+                                            &nbsp;
+                                            <a href="{{ route('animals.delete', ['id' => $animals->id]) }}"
+                                                class="btn btn-danger btn-sm">
+                                                <i class="fas fa-trash-alt"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                @endif
                             @endforeach
                     </table>
+
 
                     <div class="clearfix">
                         {{ $animal->links() }}

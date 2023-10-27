@@ -33,33 +33,35 @@
                         </thead>
                         <tbody>
                             @foreach ($treatment as $treatments)
-                                <tr>
-                                    <td scope="row">{{ $treatments->id }}</td>
-                                    <td scope="row">{{ $treatments->name }}</td>
-                                    <td scope="row">{{ $treatments->observations }}</td>
-                                    <td scope="row">RD$ {{ $treatments->amount }}</td>
-                                    <td scope="row">{{ $treatments->animals->name }}</td>
-                                    <td scope="row">{{ $treatments->vaccine->name }}</td>
-                                    <td scope="row">{{ $treatments->created_at }}</td>
+                                @if (Auth::user()->id == $treatments->users_id)
+                                    <tr>
+                                        <td scope="row">{{ $treatments->id }}</td>
+                                        <td scope="row">{{ $treatments->name }}</td>
+                                        <td scope="row">{{ $treatments->observations }}</td>
+                                        <td scope="row">RD$ {{ $treatments->amount }}</td>
+                                        <td scope="row">{{ $treatments->animals->name }}</td>
+                                        <td scope="row">{{ $treatments->vaccine->name }}</td>
+                                        <td scope="row">{{ $treatments->created_at }}</td>
 
-                                    <td scope="row">
-                                        <a href="{{ route('treatment.edit', ['id' => $treatments->id]) }}"
-                                            class="btn btn-warning btn-sm">
-                                            <i class="fas fa-edit"></i>
-                                        </a>
+                                        <td scope="row">
+                                            <a href="{{ route('treatment.edit', ['id' => $treatments->id]) }}"
+                                                class="btn btn-warning btn-sm">
+                                                <i class="fas fa-edit"></i>
+                                            </a>
 
-                                        <a href="{{ route('treatment.delete', ['id' => $treatments->id]) }}"
-                                            class="btn btn-danger btn-sm ">
-                                            <i class="fas fa-trash-alt"></i>
-                                        </a>
-                                    </td>
-                                </tr>
+                                            <a href="{{ route('treatment.delete', ['id' => $treatments->id]) }}"
+                                                class="btn btn-danger btn-sm ">
+                                                <i class="fas fa-trash-alt"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                @endif
                             @endforeach
                     </table>
 
-                    {{-- <div class="clearfix">
-                        {{ $vaccine->links() }}
-                    </div> --}}
+                    <div class="clearfix">
+                        {{ $treatment->links() }}
+                    </div>
                 </div>
             </div>
         </div>

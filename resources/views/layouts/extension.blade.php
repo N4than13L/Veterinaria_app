@@ -1,6 +1,6 @@
 <section class="visually-hidden">
     {{ $user = Auth::user() }}
-    {{ $verinaria = 'Veterinaria Los Codornices' }}
+    {{ $veterinaria = 'Veterinaria Los Codornices' }}
 </section>
 
 
@@ -44,7 +44,8 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="card mt-2">
-                <p class="m-3 mt-3">En la {{ $verinaria }}, estamos comprometidos con el cuidado y bienestar de sus
+                <h1 class="text-center">{{ $veterinaria }}</h1>
+                <p class="m-3 mt-3">En la {{ $veterinaria }}, estamos comprometidos con el cuidado y bienestar de sus
                     queridas
                     mascotas. Somos un equipo de profesionales apasionados por los animales y dedicados a brindar atención
                     médica de alta calidad,
@@ -64,7 +65,7 @@
 
                 <h1 class="text-center"> Cuidado Preventivo:</h1>
                 <p>
-                    En {{ $verinaria }}, su mascota es parte de nuestra familia. Confíenos su cuidado y estará en
+                    En {{ $veterinaria }}, su mascota es parte de nuestra familia. Confíenos su cuidado y estará en
                     las mejores manos. <strong>¡Esperamos conocerlos pronto y cuidar de su amado compañero peludo!</strong>
                     Creemos en la
                     importancia de la atención preventiva. Trabajamos con usted para establecer planes de
@@ -73,7 +74,7 @@
                 <p>
                     Registro Médico y Seguimiento de Vacunas
 
-                    En {{ $verinaria }}, comprendemos la importancia de mantener un registro médico completo y
+                    En {{ $veterinaria }}, comprendemos la importancia de mantener un registro médico completo y
                     actualizado para su mascota. Crear un historial médico sólido es esencial para garantizar su
                     salud a lo
                     largo del tiempo. Además, el seguimiento de las vacunas es fundamental para prevenir
@@ -84,7 +85,7 @@
 
                 <img src="https://cdn.pixabay.com/photo/2020/03/17/13/57/veterinary-4940425_1280.jpg" />
                 <p>
-                    En {{ $verinaria }}, nos tomamos en serio el cuidado de su mascota y estamos aquí para
+                    En {{ $veterinaria }}, nos tomamos en serio el cuidado de su mascota y estamos aquí para
                     ayudarle a mantenerla feliz y saludable durante toda su vida. Contáctenos para programar una cita o
                     para
                     obtener más información sobre nuestros servicios de registro médico y seguimiento de vacunas.
