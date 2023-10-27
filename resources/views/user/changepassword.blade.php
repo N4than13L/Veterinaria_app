@@ -1,12 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
+    <div class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card p-4">
                     <div class="card-header">
-                        <p class="text-center">Cambiar Contraseña</p>
+                        <h3 class="text-center">
+                            Cambiar Contraseña
+                        </h3>
+
                     </div>
 
                     @if (session('message'))

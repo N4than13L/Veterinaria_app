@@ -7,7 +7,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+    <div id="carouselExampleIndicators" class="carousel slide mt-4" data-bs-ride="true">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
                 aria-current="true" aria-label="Slide 1"></button>
@@ -41,7 +41,7 @@
             <span class="visually-hidden">Next</span>
         </button>
     </div>
-    <div class="container">
+    <div class="container mt-5">
         <div class="row justify-content-center">
             <div class="card mt-2">
                 <h1 class="text-center">{{ $veterinaria }}</h1>

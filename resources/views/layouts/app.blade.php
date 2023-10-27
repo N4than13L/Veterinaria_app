@@ -36,7 +36,7 @@
 
 <body class="mb-0 mt-0">
     <div id="app">
-        <nav class="navbar navbar-expand-md shadow-sm" style="background-color: #6eafa0;">
+        <nav class="navbar navbar-expand-md shadow-sm fixed-top" style="background-color: #6eafa0;">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     <h4> Veterinaria Los Codornises </h4>

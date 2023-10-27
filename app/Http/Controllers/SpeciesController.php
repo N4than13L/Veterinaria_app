@@ -63,9 +63,11 @@ class SpeciesController extends Controller
     public function edit($id)
     {
         $specie = Specie::find($id);
+        $user = Auth::user();
 
         return view('species.edit', [
-            'specie' => $specie
+            'specie' => $specie,
+            'user' => $user
         ]);
     }
 

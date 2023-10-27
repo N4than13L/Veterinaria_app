@@ -32,7 +32,11 @@ class VaccineController extends Controller
 
     public function add()
     {
-        return view('vaccine.add');
+        $user = Auth::user();
+
+        return view('vaccine.add', [
+            'user' => $user
+        ]);
     }
 
     public function save(Request $request)
