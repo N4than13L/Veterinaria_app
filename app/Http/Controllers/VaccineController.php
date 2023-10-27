@@ -22,9 +22,11 @@ class VaccineController extends Controller
     public function index()
     {
         $vaccine = Vaccine::orderBy('id', 'desc')->paginate(5);
+        $user = Auth::user();
 
         return view('vaccine.index', [
-            'vaccine' => $vaccine
+            'vaccine' => $vaccine,
+            'user' => $user
         ]);
     }
 
@@ -59,9 +61,11 @@ class VaccineController extends Controller
     public function edit($id)
     {
         $vaccine = Vaccine::find($id);
+        $user = Auth::user();
 
         return view('vaccine.edit', [
-            'vaccine' => $vaccine
+            'vaccine' => $vaccine,
+            'user' => $user
         ]);
     }
 

@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\DB;
 use App\Models\Bill;
 use App\Models\Treatment;
 use App\Models\Client;
+use Spipu\Html2Pdf\Html2Pdf;
+
 
 class BillController extends Controller
 {
@@ -126,5 +128,35 @@ class BillController extends Controller
         }
 
         return redirect()->route('bill.index')->with(['message' => 'factura eliminada con exito']);
+    }
+
+
+    public function viewpdf($id)
+    {
+        $user = Auth::user();
+        $user_id = $user->id;
+        $bill = Bill::find($id);
+
+        $client = Client::all();
+
+        return view('bill.viewpdf', [
+            'user' => $user,
+            'client' => $client,
+            'bill' => $bill
+        ]);
+    }
+
+    public function printpdf($id)
+    {
+        $html2pdf = new Html2Pdf();
+
+        $bill = Bill::find($id);
+
+        $html = "<h2>Veterinaria los codornices</h2>";
+
+        $html .= '<h4>Atendido por: </h4>' . $bill->attendedby . '<h4>Cliente:</h4> ' . $bill->client->name .  "<h4>tratamiento: </h4> " . $bill->treatment->name  . "<h4>Monto:</h4>" . " RD$ " . $bill->treatment->amount . "<h3>'Gracias por preferirnos'</h3>";
+
+        $html2pdf->writeHTML($html);
+        $html2pdf->output("factura.pdf");
     }
 }

@@ -25,8 +25,11 @@ class TreatmentController extends Controller
     {
         $treatment = Treatment::orderBy('id', 'desc')->paginate(5);
 
+        $user = Auth::user();
+
         return view('treatment.index', [
-            'treatment' => $treatment
+            'treatment' => $treatment,
+            'user' => $user
         ]);
     }
 
@@ -34,10 +37,12 @@ class TreatmentController extends Controller
     {
         $animal = Animal::all();
         $vaccine = Vaccine::all();
+        $user = Auth::user();
 
         return view('treatment.add', [
             'animal' => $animal,
-            'vaccine' => $vaccine
+            'vaccine' => $vaccine,
+            'user' => $user
         ]);
     }
 
@@ -77,7 +82,8 @@ class TreatmentController extends Controller
         return view('treatment.edit', [
             'animal' => $animal,
             'vaccine' => $vaccine,
-            'treatment' => $treatment
+            'treatment' => $treatment,
+            'user' => $user
         ]);
     }
 

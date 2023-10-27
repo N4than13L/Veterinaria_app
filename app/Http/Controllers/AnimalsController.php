@@ -25,18 +25,22 @@ class AnimalsController extends Controller
         $animal = Animal::orderBy('id', 'desc')->paginate(5);
         $species = Specie::orderBy('id', 'desc')->paginate(5);
 
+        $user = Auth::user();
+
         return view('animals.index', [
             'animal' => $animal,
-            'species' => $species
+            'species' => $species,
+            'user' => $user
         ]);
     }
 
     public function add()
     {
         $specie = Specie::all();
-
+        $user = Auth::user();
         return view('animals.add', [
-            'specie' => $specie
+            'specie' => $specie,
+            'user' => $user
         ]);
     }
 
@@ -68,10 +72,12 @@ class AnimalsController extends Controller
     {
         $animal = Animal::find($id);
         $specie = Specie::all();
+        $user = Auth::user();
 
         return view('animals.edit', [
             'animal' => $animal,
-            'specie' => $specie
+            'specie' => $specie,
+            'user' => $user
         ]);
     }
 

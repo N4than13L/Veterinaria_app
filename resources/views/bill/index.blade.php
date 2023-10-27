@@ -24,6 +24,7 @@
                                 <th scope="col">Atendido por</th>
                                 <th scope="col">Cliente</th>
                                 <th scope="col">Tratamiento</th>
+                                <th scope="col">Monto</th>
                                 <th scope="col">Fecha de creación</th>
                                 <th scope="col">Acciones</th>
                             </tr>
@@ -35,10 +36,12 @@
                                     <td scope="row">{{ $bills->attendedby }}</td>
                                     <td scope="row">{{ $bills->client->name }}</td>
                                     <td scope="row">{{ $bills->treatment->name }}</td>
+                                    <td scope="row">RD$ {{ $bills->treatment->amount }}</td>
                                     <td scope="row">{{ $bills->created_at }}</td>
 
                                     <td scope="row">
-                                        <a href="#" class="btn btn-primary btn-sm m-2">
+                                        <a href="{{ route('bill.viewpdf', ['id' => $bills->id]) }}"
+                                            class="btn btn-primary btn-sm m-2">
                                             <i class="fa-solid fa-print"></i>
                                         </a>
 
@@ -56,9 +59,7 @@
                             @endforeach
                     </table>
 
-                    <div class="clearfix">
-                        {{ $bill->links() }}
-                    </div>
+
                 </div>
             </div>
         </div>

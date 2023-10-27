@@ -89,3 +89,7 @@ Route::post('/bills/save', [BillController::class, 'save'])->name('bill.save');
 Route::get('/bills/edit/{id}', [BillController::class, 'edit'])->name('bill.edit');
 Route::post('/bills/update/{id}', [BillController::class, 'update'])->name('bill.update');
 Route::get('/bills/delete/{id}', [BillController::class, 'delete'])->name('bill.delete');
+
+// imprimir
+Route::get('/bills/viewpdf/{id}', [BillController::class, 'viewpdf'])->name('bill.viewpdf');
+Route::get('/bills/printpdf/{id}', [BillController::class, 'printpdf'])->name('bill.printpdf');

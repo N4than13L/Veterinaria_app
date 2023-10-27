@@ -22,15 +22,21 @@ class SpeciesController extends Controller
     public function index()
     {
         $specie = Specie::orderBy('id', 'desc')->paginate(5);
+        $user = Auth::user();
 
         return view('species.index', [
-            'specie' => $specie
+            'specie' => $specie,
+            'user' => $user
         ]);
     }
 
     public function add()
     {
-        return view('species.add');
+        $user = Auth::user();
+
+        return view('species.add', [
+            'user' => $user
+        ]);
     }
 
     public function save(Request $request)

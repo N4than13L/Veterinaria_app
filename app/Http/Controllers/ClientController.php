@@ -24,10 +24,12 @@ class ClientController extends Controller
     {
         $client = Client::orderBy('id', 'desc')->paginate(5);
         $animal = Animal::all();
+        $user = Auth::user();
 
         return view('client.index', [
             'client' => $client,
-            'animal' => $animal
+            'animal' => $animal,
+            'user' => $user
         ]);
     }
 
@@ -35,10 +37,12 @@ class ClientController extends Controller
     {
         $client = Client::orderBy('id', 'desc')->paginate(5);
         $animal = Animal::all();
+        $user = Auth::user();
 
         return view('client.add', [
             'client' => $client,
-            'animal' => $animal
+            'animal' => $animal,
+            'user' => $user
         ]);
     }
 
@@ -71,10 +75,12 @@ class ClientController extends Controller
     {
         $client = Client::find($id);
         $animal = Animal::all();
+        $user = Auth::user();
 
         return view('client.edit', [
             'client' => $client,
-            'animal' => $animal
+            'animal' => $animal,
+            'user' => $user
         ]);
     }
 
