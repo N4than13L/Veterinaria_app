@@ -134,7 +134,7 @@ class BillController extends Controller
     public function viewpdf($id)
     {
         $user = Auth::user();
-        $user_id = $user->id;
+        // $user_id = $user->id;
         $bill = Bill::find($id);
 
         $client = Client::all();
@@ -148,13 +148,36 @@ class BillController extends Controller
 
     public function printpdf($id)
     {
+        $user = Auth::user();
+
         $html2pdf = new Html2Pdf();
 
         $bill = Bill::find($id);
 
+
+        $ITBIS = $bill->treatment->amount * 0.18;
+
+        $total = $ITBIS + $bill->treatment->amount;
+
         $html = "<h2>Veterinaria los codornices</h2>";
 
-        $html .= '<h4>Atendido por: </h4>' . $bill->attendedby . '<h4>Cliente:</h4> ' . $bill->client->name .  "<h4>tratamiento: </h4> " . $bill->treatment->name  . "<h4>Monto:</h4>" . " RD$ " . $bill->treatment->amount . "<h3>'Gracias por preferirnos'</h3>";
+        $html .= `<h4 class='text-center'>Atendido por: </h4>` .
+            $bill->attendedby .
+            '<h3>Cliente:</h3> ' .
+
+            $bill->client->name  . ' ' . $bill->client->surname .
+            "<h3>tratamiento: </h3> " .
+            $bill->treatment->name .
+
+            "<h3>Monto:</h3>" . " RD$ " .
+            $bill->treatment->amount .
+
+            " <h3>ITBIS: </h3> " . "RD$ " .  $ITBIS .
+
+            "<br/> <h4>Total a pagar: </h4> " .
+
+            " RD$ " . $total .
+            " <p><strong>'Gracias por preferirnos'</strong></p>";
 
         $html2pdf->writeHTML($html);
         $html2pdf->output("factura.pdf");

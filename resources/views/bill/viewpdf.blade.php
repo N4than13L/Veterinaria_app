@@ -33,7 +33,7 @@
                             <tr>
                                 <td scope="row">{{ $bill->id }}</td>
                                 <td scope="row">{{ $bill->attendedby }}</td>
-                                <td scope="row">{{ $bill->client->name }}</td>
+                                <td scope="row">{{ $bill->client->name . ' ' . $bill->client->surname }}</td>
                                 <td scope="row">{{ $bill->treatment->name }}</td>
                                 <td scope="row">RD$ {{ $bill->treatment->amount }}</td>
                                 <td scope="row">{{ $bill->created_at }}</td>

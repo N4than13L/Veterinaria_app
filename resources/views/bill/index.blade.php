@@ -36,7 +36,7 @@
                                     <tr>
                                         <td scope="row">{{ $bills->id }}</td>
                                         <td scope="row">{{ $bills->attendedby }}</td>
-                                        <td scope="row">{{ $bills->client->name }}</td>
+                                        <td scope="row">{{ $bills->client->name . ' ' . $bills->client->surname }} </td>
                                         <td scope="row">{{ $bills->treatment->name }}</td>
                                         <td scope="row">RD$ {{ $bills->treatment->amount }}</td>
                                         <td scope="row">{{ $bills->created_at }}</td>
@@ -60,10 +60,7 @@
                                     </tr>
                                 @endif
                             @endforeach
-
                     </table>
-
-
                 </div>
             </div>
         </div>
