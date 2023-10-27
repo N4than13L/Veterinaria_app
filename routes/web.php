@@ -9,6 +9,7 @@ use App\Http\Controllers\VaccineController;
 use App\Http\Controllers\AnimalsController;
 use App\Http\Controllers\TreatmentController;
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\BillController;
 
 /*
 |--------------------------------------------------------------------------
@@ -79,3 +80,12 @@ Route::get('/client/edit/{id}', [ClientController::class, 'edit'])->name('client
 Route::post('/client/update/{id}', [ClientController::class, 'update'])->name('client.update');
 
 Route::get('/client/delete/{id}', [ClientController::class, 'delete'])->name('client.delete');
+
+
+// factura (bill).
+Route::get('/bills', [BillController::class, 'index'])->name('bill.index');
+Route::get('/bills/add', [BillController::class, 'add'])->name('bill.add');
+Route::post('/bills/save', [BillController::class, 'save'])->name('bill.save');
+Route::get('/bills/edit/{id}', [BillController::class, 'edit'])->name('bill.edit');
+Route::post('/bills/update/{id}', [BillController::class, 'update'])->name('bill.update');
+Route::get('/bills/delete/{id}', [BillController::class, 'delete'])->name('bill.delete');

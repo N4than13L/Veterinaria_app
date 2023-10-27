@@ -17,25 +17,19 @@ class Bill extends Model
     protected $table = "bills";
 
     protected $fillable = [
-        'id', 'attended_by',  'created_at',
-        'updated_at', 'client_id', 'treatment_id', 'vaccine_id', 'users_id',
+        'id', 'attendedby',  'created_at',
+        'updated_at', 'client_id', 'treatment_id',  'users_id',
     ];
 
     // relacion de muchos a uno.
     public function client()
     {
-        return $this->belongsTo(Client::class, 'animals_id');
+        return $this->belongsTo(Client::class, 'client_id');
     }
 
     // relacion de muchos a uno.
     public function treatment()
     {
-        return $this->belongsTo(Treatment::class, 'animals_id');
-    }
-
-    // relacion de muchos a uno.
-    public function vaccine()
-    {
-        return $this->belongsTo(Vaccine::class, 'animals_id');
+        return $this->belongsTo(Treatment::class, 'treatment_id');
     }
 }

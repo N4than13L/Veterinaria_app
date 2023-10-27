@@ -62,7 +62,8 @@
                                 Especies</a>
                             <a class="fw-normal btn" href="{{ route('treatment.index') }}"><i
                                     class="fa-solid fa-notes-medical"></i> Tratamientos</a>
-                            <a class="fw-normal btn" href="#"><i class="fa-solid fa-file-invoice-dollar"></i>
+                            <a class="fw-normal btn" href="{{ route('bill.index') }}"><i
+                                    class="fa-solid fa-file-invoice-dollar"></i>
                                 Factura</a>
                         </ul>
                     @endif
@@ -97,9 +98,10 @@
                                         <i class="fa-solid fa-gear"></i> Configuración de perfil
                                     </a>
 
-                                    {{-- <a class="dropdown-item" href="{{ route('user.change', ['id' => $user->id]) }}"> <i
+                                    <a class="dropdown-item" href="{{ route('user.change', ['id' => $user->id]) }}"> <i
                                             class="fa-solid fa-pen-to-square"></i> Cambiar contraseña
-                                    </a> --}}
+                                    </a>
+
                                     {{-- logout --}}
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
