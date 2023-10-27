@@ -33,7 +33,7 @@
 
 </head>
 
-<body>
+<body class="mb-0 mt-0">
     <div id="app">
         <nav class="navbar navbar-expand-md shadow-sm" style="background-color: #6eafa0;">
             <div class="container">
@@ -50,7 +50,7 @@
                     <!-- Left Side Of Navbar -->
                     @if (Auth::user())
                         <ul class="navbar-nav ">
-                            <a class="fw-normal btn" href="{{ url('/') }}"><i class="fa-solid fa-house"></i>
+                            <a class="fw-normal btn" href="{{ url('/home') }}"><i class="fa-solid fa-house"></i>
                                 Inicio</a>
                             <a class="fw-normal btn" href="{{ route('client.index') }}"> <i
                                     class="fa-solid fa-user"></i> Clientes</a>
@@ -98,6 +98,7 @@
                                         <i class="fa-solid fa-gear"></i> Configuración de perfil
                                     </a>
 
+                                    {{-- cambiar contrasena --}}
                                     <a class="dropdown-item" href="{{ route('user.change', ['id' => $user->id]) }}"> <i
                                             class="fa-solid fa-pen-to-square"></i> Cambiar contraseña
                                     </a>
@@ -125,6 +126,12 @@
             @yield('content')
         </main>
     </div>
+
+    <footer class="mb-0 mt-3" style="bottom: 0px;">
+        {{-- footer --}}
+        @extends('layouts.footer')
+    </footer>
+
 </body>
 
 </html>
