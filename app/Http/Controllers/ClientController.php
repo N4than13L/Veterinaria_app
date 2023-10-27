@@ -68,7 +68,7 @@ class ClientController extends Controller
 
         $client->save();
 
-        return redirect()->route('client.index')->with(['message' => 'Cliente con exito']);
+        return redirect()->route('client.index')->with(['message' => 'Cliente agregado con exito']);
     }
 
     public function edit($id)
@@ -116,7 +116,7 @@ class ClientController extends Controller
                 ]);
         }
 
-        return redirect()->route('client.index')->with(['message' => 'Cliente con exito']);
+        return redirect()->route('client.index')->with(['message' => 'Cliente agregado con exito']);
     }
 
     public function delete($id)
@@ -131,6 +131,6 @@ class ClientController extends Controller
             $client->delete();
         }
 
-        return redirect()->route('client.index')->with(['message' => 'Cliente con exito']);
+        return redirect()->route('client.index')->with(['message' => 'Cliente agregado con exito']);
     }
 }
