@@ -50,7 +50,7 @@
                     <!-- Left Side Of Navbar -->
                     @if (Auth::user())
                         <ul class="navbar-nav ">
-                            <a class="fw-normal btn" href="{{ url('/home') }}"><i class="fa-solid fa-house"></i>
+                            <a class="fw-normal btn" href="{{ url('/') }}"><i class="fa-solid fa-house"></i>
                                 Inicio</a>
                             <a class="fw-normal btn" href="{{ route('client.index') }}"> <i
                                     class="fa-solid fa-user"></i> Clientes</a>
@@ -91,10 +91,15 @@
 
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+
                                     {{-- settings --}}
                                     <a class="dropdown-item" href="{{ route('settings') }}">
                                         <i class="fa-solid fa-gear"></i> Configuración de perfil
                                     </a>
+
+                                    {{-- <a class="dropdown-item" href="{{ route('user.change', ['id' => $user->id]) }}"> <i
+                                            class="fa-solid fa-pen-to-square"></i> Cambiar contraseña
+                                    </a> --}}
                                     {{-- logout --}}
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();

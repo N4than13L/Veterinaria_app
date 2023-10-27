@@ -9,6 +9,7 @@ use App\Http\Controllers\VaccineController;
 use App\Http\Controllers\AnimalsController;
 use App\Http\Controllers\TreatmentController;
 use App\Http\Controllers\ClientController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,6 +32,8 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 // configuracion de usuario
 Route::get('/settings', [UserController::class, 'settings'])->name('settings');
 Route::post('/user/update', [UserController::class, 'update'])->name('user.update');
+Route::get('/changepassword/{id}', [UserController::class, 'change'])->name('user.change');
+Route::post('/savechangepassword/{id}', [UserController::class, 'change_password'])->name('user.change_password');
 
 // agregar vacunas.
 Route::get('/vaccines', [VaccineController::class, 'index'])->name('vaccine.index');

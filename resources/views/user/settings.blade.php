@@ -74,10 +74,15 @@
                                 </div>
                             </div>
 
+                            <div class="row mb-3 text-center">
+                                <a href="{{ route('user.change', ['id' => $user->id]) }}">Cambiar contrasena</a>
+                            </div>
+
+
                             <div class="row mb-0">
                                 <div class="col-md-6 offset-md-4">
                                     <button type="submit" class="btn btn-primary">
-                                        {{ __('ACutalizar') }}
+                                        <i class="fa-regular fa-pen-to-square"></i> Actualizar Datos
                                     </button>
                                 </div>
                             </div>
